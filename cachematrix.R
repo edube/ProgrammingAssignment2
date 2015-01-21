@@ -4,13 +4,22 @@
 
 makeCacheMatrix <- function(x = matrix()) {
         
+       ##initialise inverse matrix to NULL
         mInv<-NULL
+        
+        ##used to set the matrix in the list and set inverse to Null as it will be new data
         setMatrix <- function(y) { 
                 x<<- y
                 mInv<<- NULL
         }
+        
+        ## function to get the matrix data
         getMatrix<- function() x
+        
+        ##sets the inverse of the matrix as cached
         setInv<- function(x) mInv<<- x
+        
+        #gets the stored inverse of the matrix
         getInv<- function() mInv
         
         list(setMatrix=setMatrix, getMatrix= getMatrix, setInv=setInv, getInv=getInv)
